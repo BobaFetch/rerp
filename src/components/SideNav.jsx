@@ -5,7 +5,7 @@ import Button from "./Button"
 
 
 export default function SideNav(props) {
-    const [screen, setScreen] = useState('Production')
+    const [screen, setScreen] = useState('Home')
 
     function handleScreen(v) {
         // e.preventDefault()
@@ -14,7 +14,11 @@ export default function SideNav(props) {
     }
 
     return (
-        <div className="grid grid-cols-2 gap-2 px-2">
+        <div className="grid grid-cols-2 gap-2 pl-2">
+            <Button onClick={() => handleScreen('Home')} title='Home'>
+                <FeatherIcon icon='home' size='50' strokeWidth='1' className={screen === 'Home' ? 'mx-auto text-red-500' : 'mx-auto text-gray-600'} />
+                HOME
+            </Button>
             <Button onClick={() => handleScreen('Administration')} title='Administration'>
                 <FeatherIcon icon='users' size='50' strokeWidth='1' className={screen === 'Administration' ? 'mx-auto text-red-500' : 'mx-auto text-gray-600'} />
                 ADMIN
